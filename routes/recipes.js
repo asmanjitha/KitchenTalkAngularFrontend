@@ -106,7 +106,33 @@ router.post ("/savecomment", function(req,res){
             res.json({state:true,msg:"data inserted"});
         }
     });
-})
+});
+
+router.post("/update",function(req,res ){
+    const newRecipe = new Recipe({
+        name:req.body.name,
+        ingredients:req.body.ingredients,
+        rating: req.body.rating,
+        comments:req.body.comments,
+        description:req.body.description,
+        health: req.body.health,
+        occasion:req.body.occasion,
+        img:req.body.img,
+        method:req.body.method,
+        author:req.body.author,
+        _id:req.body._id
+
+    });
+    console.log("update call recieved");
+    Recipe.updateRecipe(newRecipe, function(err,recipe){
+        if(err){
+            res.json({state:false,msg:"data not inserted"});
+        }
+        if(recipe){
+            res.json({state:true,msg:"data inserted"});
+        }
+    });
+});
 
 
 

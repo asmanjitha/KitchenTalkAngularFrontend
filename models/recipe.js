@@ -69,3 +69,27 @@ module.exports.saveComment = function (data,callback){
         recipe.save(callback);
     });
 };
+
+module.exports.updateRecipe = function (newRecipe,callback) {
+    Recipe.findById(newRecipe._id, function (err, recipe) {
+        if (err) {
+            res.send({error:err});
+        }
+        console.log(recipe);
+        recipe.set(
+            { name:newRecipe.name,
+                ingredients:newRecipe.ingredients,
+                rating: newRecipe.rating,
+                comments:newRecipe.comments,
+                description:newRecipe.description,
+                health: newRecipe.health,
+                occasion:newRecipe.occasion,
+                img:newRecipe.img,
+                method:newRecipe.method,
+                author:newRecipe.author,
+                id:newRecipe._id
+            }
+        );
+        recipe.save(callback);
+    });
+};
