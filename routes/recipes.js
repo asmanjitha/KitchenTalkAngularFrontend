@@ -11,7 +11,7 @@ router.post("/saverecipe",function(req,res ){
         name:req.body.name,
         ingredients:req.body.ingredients,
         rating: req.body.rating,
-        comments:req.body.comments,
+        comments:new Object(),
         description:req.body.description,
         health: req.body.health,
         occasion:req.body.occasion,
@@ -99,6 +99,22 @@ router.post ("/savecomment", function(req,res){
     };
     console.log("/savecomment call received");
     Recipe.saveComment(data, function(err,recipe){
+        if(err){
+            res.json({state:false,msg:"data not inserted"});
+        }
+        if(recipe){
+            res.json({state:true,msg:"data inserted"});
+        }
+    });
+});
+
+router.post ("/saverate", function(req,res){
+    const data = {
+        id:req.body._id,
+        rating:req.body.rating
+    };
+    console.log("/saverate call received");
+    Recipe.saveRate(data, function(err,recipe){
         if(err){
             res.json({state:false,msg:"data not inserted"});
         }

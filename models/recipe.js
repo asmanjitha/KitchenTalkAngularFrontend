@@ -6,13 +6,15 @@ var recipeSchema = mongoose.Schema({
     name:String,
     ingredients:[String],
     rating: Number,
+    count:Number,
     comments:Object,
     description:String,
     health: [String],
     occasion:[String],
     method: String,
     img: String,
-    author: String
+    author: String,
+    date: String
 
 });
 
@@ -64,6 +66,21 @@ module.exports.saveComment = function (data,callback){
         recipe.set(
             {
                 comments: data.comments
+            }
+        );
+        recipe.save(callback);
+    });
+};
+
+module.exports.saveRate = function (data,callback){
+    Recipe.findById(data.id, function (err, recipe) {
+        if (err) {
+            res.send({error: err});
+        }
+
+        recipe.set(
+            {
+                rating: data.rating
             }
         );
         recipe.save(callback);
