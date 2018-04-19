@@ -3,7 +3,7 @@ const router = express.Router();
 const Admin  = require('../models/admin');
 const jwt = require('jsonwebtoken');
 const dbConfig = require('../config/database');
-const passportadmin = require('passport');
+const passport = require('passport');
 
 
 
@@ -78,7 +78,7 @@ router.post("/register",function(req,res ){
 });
 
 
-router.post('/profile', passportadmin.authenticate('jwt', {session: false}), function(req, res, next){
+router.post('/profile', passport.authenticate('jwt', {session: false}), function(req, res, next){
     console.log("/profile admin request received");
     if (req.admin){
         res.json({state:true,admin: req.admin});
