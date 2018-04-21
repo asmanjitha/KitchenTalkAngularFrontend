@@ -14,7 +14,8 @@ app.use(bodyParser.json());
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(cors());
-require('./config/passport')(passport);
+//require('./config/passport')(passport);
+require('./config/passportadmin')(passport);
 
 
 const config = require("./config/database");
@@ -22,6 +23,7 @@ const config = require("./config/database");
 const user  = require("./routes/users");
 const recipe = require("./routes/recipes");
 const admin = require("./routes/admins");
+const temprecipe = require("./routes/temprecipes");
 
 const connection = mongoose.connect(config.database);
 if (connection){
@@ -36,6 +38,7 @@ app.use(express.static(path.join(__dirname,"public")));
 app.use('/user',user);
 app.use('/recipe',recipe);
 app.use('/admin',admin);
+app.use('/temprecipe',temprecipe);
 
 
 

@@ -8,7 +8,8 @@ var adminSchema = new mongoose.Schema({
     email:   String,
     name:   String,
     username:  String,
-    img: String
+    img: String,
+    isadmin:   Boolean
 
 
 });

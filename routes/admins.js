@@ -45,7 +45,8 @@ router.post("/login",function(req,res ){
                             id:admin._id,
                             name:admin.name,
                             username:admin.username,
-                            email:admin.email
+                            email:admin.email,
+                            isadmin:admin.isadmin
                         }
                     }
                 )
@@ -62,7 +63,8 @@ router.post("/register",function(req,res ){
         username : req.body.username,
         name : req.body.name,
         email : req.body.email,
-        password: req.body.password
+        password: req.body.password,
+        isadmin:req.body.isadmin
     });
     console.log('register call recieved');
 
@@ -78,11 +80,11 @@ router.post("/register",function(req,res ){
 });
 
 
-router.post('/profile', passport.authenticate('jwt', {session: false}), function(req, res, next){
+router.post('/getprofile', passport.authenticate('jwt', {session: false}), function(req, res, next){
     console.log("/profile admin request received");
-    if (req.admin){
-        res.json({state:true,admin: req.admin});
-    }else if (!req.admin){
+    if (req.user){
+        res.json({state:true,admin: req.user});
+    }else if (!req.user){
         res.json({state: false})
     }
     //res.json({user: req.user});

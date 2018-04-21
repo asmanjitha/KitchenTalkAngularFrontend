@@ -11,7 +11,7 @@ router.post("/login",function(req,res ){
     const password = req.body.password;
     var token;
     var tokenObj;
-    console.log("login request recieved");
+    console.log("login request received");
 
     User.findByEmail(email, function(err,user){
         if (err){
@@ -45,7 +45,7 @@ router.post("/login",function(req,res ){
                     }
                 )
             }else {
-                console.log("password miss matched")
+                console.log("password miss matched");
                 res.json({state:false, msg:"wrong password "})
             }
         })
