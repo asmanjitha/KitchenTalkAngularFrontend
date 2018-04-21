@@ -119,7 +119,7 @@
     </findStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/angular-front" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -396,7 +396,7 @@
       <workItem from="1524150948854" duration="338000" />
       <workItem from="1524237772566" duration="596000" />
       <workItem from="1524241273892" duration="3964000" />
-      <workItem from="1524249348496" duration="35800000" />
+      <workItem from="1524249348496" duration="36487000" />
     </task>
     <task id="LOCAL-00001" summary="initial commint">
       <created>1521006101485</created>
@@ -461,11 +461,18 @@
       <option name="project" value="LOCAL" />
       <updated>1524323818437</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="final completed.">
+      <created>1524324062603</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1524324062603</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="483857000" />
+    <option name="totallyTimeSpent" value="484544000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -522,7 +529,8 @@
     <MESSAGE value="comment Recipe completed." />
     <MESSAGE value="admin partially completed." />
     <MESSAGE value="admin fully completed." />
-    <option name="LAST_COMMIT_MESSAGE" value="admin fully completed." />
+    <MESSAGE value="final completed." />
+    <option name="LAST_COMMIT_MESSAGE" value="final completed." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
